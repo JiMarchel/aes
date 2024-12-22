@@ -9,14 +9,9 @@ export default function LandingPage() {
       <div className="flex flex-col justify-center items-center py-40 gap-4">
         <h1 className="font-bold text-7xl tracking-tighter">Secure Your Data With EncryptoBox</h1>
         <p className="text-xl text-gray-600">Powerful encryption and decryption tools to keep your information safe and private.</p>
-        <div className="flex gap-2">
-          <Link to="/home">
-            <Button className="font-medium mt-10">Get Started</Button>
-          </Link>
-          <Link to="/login">
-            <Button className="font-medium mt-10">Login</Button>
-          </Link>
-        </div>
+        <Link to="/login">
+          <Button className="font-medium mt-10">Get Started</Button>
+        </Link>
       </div>
 
       <div className="flex flex-col justify-center items-center gap-14 bg-gray-100 flex-grow">

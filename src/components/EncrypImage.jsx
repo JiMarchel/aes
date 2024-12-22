@@ -19,7 +19,7 @@ const EncryptImage = () => {
   useEffect(() => {
     const fetchCsrfToken = async () => {
       try {
-        const response = await axios.get("http://110.239.93.223:7859/csrf-token");
+        const response = await axios.get("http://110.239.93.223:7832/csrf-token");
         setCsrfToken(response.data.csrf_token);
       } catch (error) {
         console.error("Error fetching CSRF token", error);
@@ -40,7 +40,7 @@ const EncryptImage = () => {
     formData.append("csrf_token", csrfToken);
 
     try {
-      const response = await axios.post("http://110.239.93.223:7859/upload", formData, {
+      const response = await axios.post("http://110.239.93.223:7832/upload", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -67,7 +67,7 @@ const EncryptImage = () => {
     }
 
     const filename = encryptionResult.encryptedFilePath.split("/").pop();
-    const downloadUrl = `http://110.239.93.223:7859/download/${filename}`;
+    const downloadUrl = `http://110.239.93.223:7832/download/${filename}`;
 
     // Membuka file terenkripsi di tab baru
     window.open(downloadUrl, "_blank");

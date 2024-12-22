@@ -10,6 +10,7 @@ import DecryptImage from './components/DecrypImage';
 import EncryptFile from './components/EncrypFile';
 import DecryptFile from './components/DecrypFile';
 import LoginPage from './components/Login';
+import RegisterPage from './components/Register';
 
 function App() {
   return (
@@ -18,7 +19,8 @@ function App() {
         {/* remove login page */}
         <Route path="/" element={<LandingPage />} />
         <Route path="/home" element={<Home />} />
-        <Route path='login' element={<LoginPage />} />
+        <Route path='/login' element={<LoginPage />} />
+        <Route path='/register' element={<RegisterPage />} />
         <Route path="/encrypt-text" element={<EncryptText />} />
         <Route path="/decrypt-text" element={<DecryptText />} />
         <Route path="/encrypt-image" element={<EncryptImage />} />

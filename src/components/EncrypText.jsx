@@ -1,5 +1,5 @@
 import { useState } from "react";
-import axios from "axios";  // Import axios untuk HTTP request
+import axios from "axios";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "./ui/card";
 import { Textarea } from "./ui/textarea";
 import { Label } from "./ui/label";
@@ -25,7 +25,6 @@ const EncryptText = () => {
     }
   };
 
-
   useState(() => {
     fetchCsrfToken();
   }, []);
@@ -36,7 +35,7 @@ const EncryptText = () => {
       // Kirimkan data ke backend Flask melalui request POST
       const response = await axios.post("http://110.239.93.223:7821/encrypt", {
         text: text,
-        key_length: parseInt(keyLength),  // Mengirimkan panjang kunci sebagai angka
+        key_length: parseInt(keyLength),
         csrf_token: csrfToken
       });
 
@@ -56,8 +55,6 @@ const EncryptText = () => {
       console.error(`${error}`, err);
     }
   };
-
-  console.log({ text, keyLength, csrfToken })
 
   return (
     <Wrapper >
